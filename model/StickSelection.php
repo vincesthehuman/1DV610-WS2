@@ -13,16 +13,8 @@ class StickSelection {
 	 */
 	private $amount;
 
-	public static function One() {
-		return new StickSelection(1);
-	}
-
-	public static function Two() {
-		return new StickSelection(2);
-	}
-
-	public static function Three() {
-		return new StickSelection(3);
+	public static function sticksToDraw($sticksDrawn) {
+		return new StickSelection($sticksDrawn);
 	}
 
 	public function  getAmount() {
