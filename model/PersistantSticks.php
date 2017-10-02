@@ -43,9 +43,8 @@ class PersistantSticks {
 	 * @param  StickSelection $selection [description]
 	 */
 	public function removeSticks(StickSelection $selection) {
-		assert($selection->getAmount() >= 1);
-		assert($selection->getAmount() <= 3);
-		assert($selection->getAmount() < $_SESSION[self::$sticks]);
+		$amount = $selection->getAmount();
+		assert($amount >= 1 && $amount <= 3 && $amount < $_SESSION[self::$sticks]);
 
 		$_SESSION[self::$sticks] -= $selection->getAmount();
 	}
