@@ -10,7 +10,7 @@ class HTMLPage {
 	 * @param  String $body  
 	 * @return String HTML
 	 */
-	public function getPage($title, $body) {
+	public function render($title, $body) {
 		return 
 		'<!DOCTYPE HTML SYSTEM>
 			<html>

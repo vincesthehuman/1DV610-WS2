@@ -13,7 +13,7 @@ $body = $controller->runGame();
 
 $page = new view\HTMLPage();
 
-echo $page->getPage("Game of sticks", $body);
+echo $page->render("Game of sticks", $body);
 
 
 
