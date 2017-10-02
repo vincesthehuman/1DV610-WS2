@@ -5,7 +5,7 @@ namespace controller;
 require_once("model/LastStickGame.php");
 require_once("view/GameView.php");
 
-class PlayGame {
+class Game {
 
 	/**
 	 * @var \model\LastStickGame
@@ -29,10 +29,10 @@ class PlayGame {
 	}
 
 	/**
+	* Starts the game
 	* @return String HTML
 	*/
 	public function runGame() {
-		//Handle input
 		if ($this->game->isGameOver()) {
 			$this->doGameOver();
 		} else {
@@ -52,7 +52,7 @@ class PlayGame {
 				$sticksDrawnByPlayer = $this->getNumberOfSticks();
 				$this->game->playerSelectsSticks($sticksDrawnByPlayer, $this->view);
 			} catch(\Exception $e) {
-				$this->message = "<h1>Unauthorized input</h1>";
+				$this->message = "Unauthorized input";
 			}
 		}
 	}

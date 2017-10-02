@@ -47,12 +47,12 @@ class GameView implements \model\StickGameObserver {
 	public function show($message) {
 		if ($this->game->isGameOver()) {
 
-			return 	$message .
+			return  '<h1>' . $message . '</h1>' .
 					$this->showSticks() . 
 					$this->showWinner() . 
 					$this->startOver();
 		} else {
-			return 	$message .
+			return 	 '<h1>' . $message . '</h1>'  .
 					$this->showSticks() . 
 					$this->showSelection();
 		}

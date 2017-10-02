@@ -2,10 +2,10 @@
 
 session_start();
 
-require_once("controller/PlayGame.php");
+require_once("controller/Game.php");
 require_once("view/HTMLPage.php");
 
-$controller = new controller\PlayGame();
+$controller = new controller\Game();
 
 
 $body = $controller->runGame();
@@ -14,7 +14,3 @@ $body = $controller->runGame();
 $page = new view\HTMLPage();
 
 echo $page->render("Game of sticks", $body);
-
-
-
-
