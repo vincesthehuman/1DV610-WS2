@@ -28,7 +28,7 @@ class GameView implements \model\StickGameObserver {
 	 * Sets the number of sticks the AI player did
 	 * @param  modelStickSelection $sticks 
 	 */
-	public function aiRemoved(\model\StickSelection $sticks) {
+	public function setAiDrawnSticks(\model\StickSelection $sticks) {
 		$this->numberOfSticksAIDrewLastTime = $sticks->getAmount();
 	}
 

@@ -20,16 +20,16 @@ class LastStickGame {
 		if ($this->isGameOver()) {
 			$observer->playerWins();
 		} else {
-			$this->AIPlayerTurn($observer);
+			$this->aiTurn($observer);
 		} 
 	}	
 
-	private function AIPlayerTurn(StickGameObserver $observer) {
+	private function aiTurn(StickGameObserver $observer) {
 		$sticksLeft = $this->getNumberOfSticks();
 		$selection = $this->ai->getSelection($sticksLeft);
 		
 		$this->sticks->removeSticks($selection);
-		$observer->aiRemoved($selection);
+		$observer->setAiDrawnSticks($selection);
 
 		if ($this->isGameOver()) {
 			$observer->playerLoose();
