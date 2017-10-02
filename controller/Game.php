@@ -36,7 +36,7 @@ class Game {
 		if ($this->game->isGameOver()) {
 			$this->game->newGame();
 		} else {
-			$this->playGame();
+			$this->playerDraw();
 		}
 
 		//Generate Output
@@ -44,10 +44,10 @@ class Game {
 	}
 
 	/**
-	* Called when game is still running
+	* Checks how many sticks player selects, throws exception if not valid input
 	*/
-	private function playGame() {
-		if ($this->playerSelectSticks()) {
+	private function playerDraw() {
+		if (isset($_GET["draw"])) {
 			try {
 				$sticksDrawnByPlayer = $this->getNumberOfSticks();
 				$this->game->playerSelectsSticks($sticksDrawnByPlayer, $this->view);
@@ -58,21 +58,14 @@ class Game {
 	}
 
 	/** 
-	* @return boolean
-	*/
-	private function playerSelectSticks() {
-		return isset($_GET["draw"]);
-	}
-
-
-	/** 
 	* @return \model\StickSelection
 	*/
 	private function getNumberOfSticks() {
+
 		switch ($_GET["draw"]) {
-			case 1 : return \model\StickSelection::One(); break;
-			case 2 : return \model\StickSelection::Two(); break;
-			case 3 : return \model\StickSelection::Three(); break;
+			case 1 :
+			case 2 :
+			case 3 : return \model\StickSelection::sticksToDraw($_GET["draw"]); break;
 		}
 		throw new \Exception("Invalid input");
 	}
