@@ -34,9 +34,9 @@ class AIPlayer {
 
 		//change from integer into valid StickSelection
 		switch ($drawInteger) {
-			case 1 : return StickSelection::One(); break;
-			case 2 : return StickSelection::Two(); break;
-			case 3 : return StickSelection::Three(); break;
+			case 1 :
+			case 2 :
+			case 3 : return \model\StickSelection::sticksToDraw($drawInteger); break;
 		}
 
 		//should never go here
