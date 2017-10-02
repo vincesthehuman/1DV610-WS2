@@ -34,7 +34,7 @@ class Game {
 	*/
 	public function runGame() {
 		if ($this->game->isGameOver()) {
-			$this->doGameOver();
+			$this->game->newGame();
 		} else {
 			$this->playGame();
 		}
@@ -55,19 +55,6 @@ class Game {
 				$this->message = "Unauthorized input";
 			}
 		}
-	}
-
-	private function doGameOver() {
-		if ($this->playerStartsOver()) {
-			$this->game->newGame();
-		}		
-	}
-
-		/** 
-	* @return boolean
-	*/
-	private function playerStartsOver() {
-		return isset($_GET["startOver"]);
 	}
 
 	/** 
