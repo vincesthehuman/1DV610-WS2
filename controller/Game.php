@@ -63,6 +63,13 @@ class Game {
 		}		
 	}
 
+		/** 
+	* @return boolean
+	*/
+	private function playerStartsOver() {
+		return isset($_GET["startOver"]);
+	}
+
 	/** 
 	* @return boolean
 	*/
@@ -70,12 +77,6 @@ class Game {
 		return isset($_GET["draw"]);
 	}
 
-	/** 
-	* @return boolean
-	*/
-	private function playerStartsOver() {
-		return isset($_GET["startOver"]);
-	}
 
 	/** 
 	* @return \model\StickSelection
