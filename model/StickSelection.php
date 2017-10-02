@@ -9,6 +9,14 @@ namespace model;
  */
 class StickSelection {
 	/**
+	 * Private constructor makes sure we cannot create outside of 1,2,3
+	 * @param [type] $amount [description]
+	 */
+	 private function __construct($amount) {
+		$this->amount = $amount;
+	}
+
+	/**
 	 * @var int (1,2,3)
 	 */
 	private $amount;
@@ -20,15 +28,4 @@ class StickSelection {
 	public function  getAmount() {
 		return $this->amount;
 	}
-
-	/**
-	 * Private constructor makes sure we cannot create outside of 1,2,3
-	 * @param [type] $amount [description]
-	 */
-	private function __construct($amount) {
-		$this->amount = $amount;
-	}
-
-
-
 }
